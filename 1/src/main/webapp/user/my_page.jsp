@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <link href="css/my_page.css" rel="stylesheet" type="text/css">
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -36,8 +35,7 @@
 			가  입  일 : <input type="text" name="date" value="${requestScope.user.user_date}" readonly="readonly"><br>
 	</form>
 	<div id="dml" align="center">
-		<input type="button" value="수정" onclick="location.href='UserAuthen.us?sId=${requestScope.user.user_email}'"><input type="button" value="메인화면" onclick="location.href='/BookShop/'"><br>
-		<a href="MyInfoDel.us?sId=${requestScope.user.user_email}">회원탈퇴를 원하시나요?</a>
+		<input type="button" value="수정"><input type="button" value="회원탈퇴"><input type="button" value="메인으로">
 	</div>
 	
 	
