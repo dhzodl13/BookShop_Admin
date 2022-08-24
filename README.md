@@ -122,6 +122,16 @@ CREATE TABLE ordDetail(
 );
 
 
+주문에 사용된 마일리지를 저장하는 테이블
+(결제 취소시 ord테이블의price - order_mileage = 실환불금액 으로 계산)
+(결제취소시 실환불금액이 환불되고, order_mileage만큼 마일리지가 환불됨)
+CREATE TABLE ordMileage(
+	order_num int not null,
+	order_mileage int default 0,
+	constraint ord_nu_fk foreign key(order_num) references ord(order_num)
+);
+
+
 ex) 상품 등록
 insert into product values(1, '국내도서', '사람1', 10000, 6, '역행자_표지.jpg', '책1', '역행자_소개.jpg', 0, now());
 insert into product values(2, 'eBook', '사람1', 10000, 6, '역행자_표지.jpg', '책1', '역행자_소개.jpg', 0, now());
